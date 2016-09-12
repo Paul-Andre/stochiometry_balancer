@@ -24,17 +24,23 @@ ostream& operator<< (ostream& cout, const Molecule& molecule){
 	
 	map<string, int> mol=molecule.atomList;
 	
-	if(mol.empty()){cout<<"[empty]";}
-	
-	cout<<molecule.coofficient<<" ";
-	
-	for(MolIterator i=mol.begin(); i!=mol.end(); i++){
-	
-		cout<<   i->first  <<"("<<  i->second  <<")"; 
-	
+	if(mol.empty()){
+		cout<<"[empty]";
 	}
-	
+	else {
+
+		cout<<molecule.coofficient<<" ";
+
+		/*
+	   for(MolIterator i=mol.begin(); i!=mol.end(); i++){
+
+	   cout<<   i->first  <<"("<<  i->second  <<")"; 
+
+	   }
+	   */
+
 		cout << molecule.initialForm;
+	}
 
 	return cout;
 }

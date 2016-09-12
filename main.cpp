@@ -12,7 +12,7 @@ using namespace std;
 int main(){
 
 	cout<<"Welcome to the chemical equation balancer.\nIt works, but paranthesises aren't yet accepted.\n"
-	<<"Rememeber, element symbols must start with a capitol letter.\n"
+	<<"Rememeber, element symbols must start with a capital letter.\n"
 	<<"Submit your equations in the form of:\n\n"<<"H2O -> H2 + O2\n\n"<<flush;
 	
 while(true){

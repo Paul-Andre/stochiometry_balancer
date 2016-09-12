@@ -113,7 +113,7 @@ using namespace boost::numeric;
 	
 	map<string, int> elementIndex;
 	
-	std::cout<<*this;
+	//std::cout<<*this;
 	
 	{
 		typedef set<string>::const_iterator setIt;
