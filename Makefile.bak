@@ -1,0 +1,24 @@
+CC = g++
+CFLAGS = -Wall -g
+LDFLAGS = ""
+
+
+
+readUtils.o : readUtils.cpp readUtils.hpp
+	${CC} ${CFLAGS} -c readUtils.cpp
+
+Molecule.o : Molecule.cpp Molecule.hpp readUtils.hpp
+	${CC} ${CFLAGS} -c Molecule.cpp
+	
+Equation.o : Equation.cpp Equation.hpp solve.hpp Molecule.hpp
+	${CC} ${CFLAGS} -c Equation.cpp
+
+solve.o : solve.cpp solve.hpp invertMatrix.hpp
+	${CC} ${CFLAGS} -c solve.cpp
+
+main.o : main.cpp Equation.cpp
+	${CC} ${CFLAGS} -c main.cpp
+
+myprogram : main.o solve.o Equation.o Molecule.o readUtils.o
+	${CC} ${CFLAGS} readUtils.o Molecule.o Equation.o solve.o main.o ${LDFLAGS} -o balancer
+# DO NOT DELETE
